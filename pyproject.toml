@@ -45,6 +45,8 @@ Documentation = "https://multitaskbattery.readthedocs.io/"
 Issues = "https://github.com/diedrichsenlab/MultiTaskBattery/issues"
 
 [project.optional-dependencies]
+# gamepad responses (response_device = 'gamepad' in constants.py)
+gamepad = ["pysdl2", "pysdl2-dll"]
 docs = [
     "numpy",
     "sphinx>=1.4",

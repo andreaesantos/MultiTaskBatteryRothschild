@@ -13,6 +13,14 @@ exp_name = 'example_minimal' # name of the experiment
 #COMMENT THIS FOR SCANNING
 response_keys    = ['a', 's', 'd', 'f']
 
+# Optional: respond with a gamepad. Each button press arrives as the response key at the
+# same position (first button -> response_keys[0], ...); the keyboard keeps working too.
+# Needs:  pip install pysdl2 pysdl2-dll
+# Find your gamepad's button names with:  python -m MultiTaskBattery.gamepad
+response_device = 'gamepad'
+gamepad_buttons = ['y', 'x', 'b', 'a']    # button for response 1, 2, 3, 4 (same names on Windows and macOS)
+gamepad_other_buttons = {'start': 't'}    # optional: other button -> key ('t' = simulate scanner trigger)
+
 #not used
 response_fingers = ['Pinky', 'Ring','Middle', 'Index']
 

@@ -11,6 +11,7 @@ import MultiTaskBattery.utils as ut
 import MultiTaskBattery.task_blocks as tasks
 from MultiTaskBattery.ttl_clock import TTLClock
 from MultiTaskBattery.screen import Screen
+import MultiTaskBattery.gamepad as gamepad
 # import pylink as pl # to connect to eyelink
 
 
@@ -37,6 +38,10 @@ class Experiment:
         # open screen and display fixation cross
         ### set the resolution of the subject screen here:
         self.screen = Screen(const.screen)
+
+        # optional gamepad (response_device = 'gamepad' in constants.py): its button presses
+        # arrive as the response keys, so every task works unchanged
+        self.gamepad = gamepad.from_constants(const, self.screen.window)
 
         # quit key: works at any point of the experiment (checked on every flip / key read); set quit_key = None in constants.py to disable
         quit_key = getattr(const, 'quit_key', 'escape')
